@@ -1,0 +1,147 @@
+object AboutForm: TAboutForm
+  Left = 306
+  Height = 407
+  Top = 216
+  Width = 783
+  Caption = 'เกี่ยวกับโปรแกรมนี้'
+  ClientHeight = 407
+  ClientWidth = 783
+  Font.CharSet = 4
+  Font.Height = -19
+  Font.Name = 'TH Sarabun New'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.8.4.0'
+  object Memo1: TMemo
+    Left = 16
+    Height = 200
+    Top = 8
+    Width = 488
+    Color = clMoneyGreen
+    Font.CharSet = THAI_CHARSET
+    Font.Height = -19
+    Font.Name = 'TH Sarabun New'
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssAutoBoth
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 26
+    Top = 224
+    Width = 72
+    Caption = 'Powered by:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 415
+    Height = 26
+    Top = 344
+    Width = 67
+    Caption = 'Sponsor By:'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Cursor = crHandPoint
+    Left = 120
+    Height = 31
+    Top = 216
+    Width = 350
+    Caption = 'www.appsgoods.com email: bis-tech@hotmail.com'
+    Font.CharSet = THAI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -23
+    Font.Name = 'TH Sarabun New'
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+    OnClick = Label3Click
+  end
+  object Label4: TLabel
+    Cursor = crHandPoint
+    Left = 502
+    Height = 26
+    Top = 328
+    Width = 210
+    Caption = 'www.bangkokinnovationzystem.com'
+    Font.CharSet = THAI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -19
+    Font.Name = 'TH Sarabun New'
+    ParentColor = False
+    ParentFont = False
+    OnClick = Label4Click
+  end
+  object Label5: TLabel
+    Left = 56
+    Height = 26
+    Top = 344
+    Width = 107
+    Caption = 'Technical Support:'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Cursor = crHandPoint
+    Left = 175
+    Height = 26
+    Top = 344
+    Width = 136
+    Caption = 'www.getasoftware.com'
+    Font.CharSet = 4
+    Font.Color = clBlue
+    Font.Height = -19
+    Font.Name = 'TH Sarabun New'
+    ParentColor = False
+    ParentFont = False
+    OnClick = Label6Click
+  end
+  object Image1: TImage
+    Left = 521
+    Height = 178
+    Top = 24
+    Width = 224
+  end
+  object Label7: TLabel
+    Cursor = crHandPoint
+    Left = 502
+    Height = 26
+    Top = 368
+    Width = 235
+    Caption = 'http://dharma-of-buddha.blogspot.com/'
+    Font.CharSet = 4
+    Font.Color = clBlue
+    Font.Height = -19
+    Font.Name = 'TH Sarabun New'
+    ParentColor = False
+    ParentFont = False
+    OnClick = Label7Click
+  end
+  object Image2: TImage
+    Cursor = crHandPoint
+    Left = 576
+    Height = 106
+    Top = 216
+    Width = 112
+    OnClick = Image2Click
+  end
+  object Memo2: TMemo
+    Left = 20
+    Height = 82
+    Top = 254
+    Width = 484
+    Color = clMoneyGreen
+    Font.CharSet = 4
+    Font.Height = -19
+    Font.Name = 'TH Sarabun New'
+    Lines.Strings = (
+      'โปรแกรมนี้สร้างขึ้นเพื่อ จุดประสงค์ในการเผยแผ่พระบาลี'
+      'โปรแกรมไม่ได้มีผู้สนับสนุน เป็นเงินทอง'
+      'ขอสงวนสิทธิ์ ห้ามจำหน่าย สามารถแจกจ่ายได้ฟรี'
+    )
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssAutoBoth
+    TabOrder = 1
+  end
+end

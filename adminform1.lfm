@@ -1,0 +1,340 @@
+object SubjPaliForm: TSubjPaliForm
+  Left = 265
+  Height = 433
+  Top = 311
+  Width = 956
+  BorderStyle = bsSingle
+  Caption = 'ระบบบันทึกประโยคบาลี'
+  ClientHeight = 413
+  ClientWidth = 956
+  Font.CharSet = 4
+  Font.Height = -23
+  Font.Name = 'TH Sarabun Pali'
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  LCLVersion = '1.8.4.0'
+  WindowState = wsMaximized
+  object ComboBox1: TComboBox
+    Left = 16
+    Height = 35
+    Top = 112
+    Width = 368
+    ItemHeight = 27
+    ItemIndex = 0
+    Items.Strings = (
+      'ใช้อักษรพิเศษ สำหรับค้นหาคำในประโยคพระบาลี'
+      'ใช้อักษรพิเศษ สำหรับเพิ่มแก้ไขข้อมูลประโยคพระบาลี'
+    )
+    TabOrder = 0
+    Text = 'ใช้อักษรพิเศษ สำหรับค้นหาคำในประโยคพระบาลี'
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 0
+    Height = 65
+    Top = 0
+    Width = 956
+    Align = alTop
+    AutoFill = True
+    Caption = 'ค้นหาคำในประโยค ตัวอย่าง'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 33
+    ClientWidth = 952
+    Columns = 2
+    ItemIndex = 0
+    Items.Strings = (
+      'ค้นหาประโยคบาลี'
+      'ค้นหาประโยคภาษาไทย'
+    )
+    TabOrder = 1
+  end
+  object DBMemo1: TDBMemo
+    Left = 16
+    Height = 104
+    Top = 248
+    Width = 552
+    DataField = 'PaliSubject'
+    DataSource = DataSource1
+    ScrollBars = ssBoth
+    TabOrder = 2
+  end
+  object DBMemo2: TDBMemo
+    Left = 592
+    Height = 104
+    Top = 248
+    Width = 664
+    DataField = 'Content'
+    DataSource = DataSource1
+    ScrollBars = ssBoth
+    TabOrder = 3
+  end
+  object Edit1: TEdit
+    Left = 592
+    Height = 35
+    Top = 160
+    Width = 657
+    OnKeyUp = Edit1KeyUp
+    TabOrder = 4
+  end
+  object Label1: TLabel
+    Left = 592
+    Height = 27
+    Top = 128
+    Width = 116
+    Caption = 'ค้นหาคำในประโยค'
+    ParentColor = False
+  end
+  object Panel1: TPanel
+    Left = 16
+    Height = 34
+    Top = 168
+    Width = 368
+    ClientHeight = 34
+    ClientWidth = 368
+    TabOrder = 5
+    object Ying_btn: TButton
+      Left = 16
+      Height = 25
+      Top = 8
+      Width = 43
+      Caption = ''
+      OnClick = Ying_btnClick
+      TabOrder = 0
+    end
+    object Tharn_btn: TButton
+      Left = 72
+      Height = 25
+      Top = 8
+      Width = 43
+      Caption = ''
+      OnClick = Tharn_btnClick
+      TabOrder = 1
+    end
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 27
+    Top = 216
+    Width = 74
+    Caption = 'ประโยคบาลี'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 596
+    Height = 27
+    Top = 216
+    Width = 141
+    Caption = 'คำแปลประโยคตัวอย่าง'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 16
+    Height = 27
+    Top = 72
+    Width = 328
+    Caption = 'อักษรพิเศษ (โปรแกรมนี้อาจแสดงผลผิดพลาดเล็กน้อย)'
+    Font.CharSet = 4
+    Font.Color = clBlue
+    Font.Height = -23
+    Font.Name = 'TH Sarabun Pali'
+    ParentColor = False
+    ParentFont = False
+  end
+  object KDBGrid1: TKDBGrid
+    Left = 16
+    Height = 268
+    Top = 365
+    Width = 1240
+    ColCount = 2
+    Columns = <    
+      item
+        Extent = 600
+        Font.CharSet = 4
+        Font.Height = -23
+        Font.Name = 'TH Sarabun Pali'
+        FieldName = 'PaliSubject'
+        Title = 'ประโยคบาลีตัวอย่าง'
+        TitleFont.CharSet = 4
+        TitleFont.Height = -23
+        TitleFont.Name = 'TH Sarabun Pali'
+        TitleFont.Style = [fsBold]
+      end    
+      item
+        Extent = 600
+        Font.CharSet = 4
+        Font.Height = -23
+        Font.Name = 'TH Sarabun New'
+        FieldName = 'Content'
+        Title = 'ประโยคแปลไทย'
+        TitleFont.CharSet = 4
+        TitleFont.Height = -23
+        TitleFont.Name = 'TH Sarabun Pali'
+        TitleFont.Style = [fsBold]
+      end>
+    DataSource = DataSource1
+    DefaultColWidth = 600
+    DefaultRowHeight = 36
+    FixedCols = 0
+    RowCount = 2
+    TabOrder = 6
+    ColWidths = (
+      0
+      0
+    )
+    RowHeights = (
+      0
+      0
+    )
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 448
+    Height = 49
+    Top = 648
+    Width = 321
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 49
+    ClientWidth = 321
+    DataSource = DataSource1
+    Hints.Strings = (
+      'ย้อนไปประโยคแรก'
+      'ย้อนไปประโยคก่อนหน้า'
+      'ไปยังประโยคถัดไป'
+      'ไปยังประโยคสุดท้าย'
+      'แทรกประโยคเข้าฐานข้อมูล'
+      'ลบประโยคออกจากฐานข้อมูล'
+      'เปิดแก้ไขข้อมูลประโยค'
+      'ยืนยันกันเพิ่มหรือแก้ไขข้อมูล'
+      'ยกเลิกการ เพิ่ม หรือ แก้ไขข้อมูล'
+      'รีเฟรชฐานข้อมูล'
+    )
+    OnClick = DBNavigator1Click
+    Options = []
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 7
+  end
+  object MainMenu1: TMainMenu
+    left = 312
+    top = 24
+    object Filemnu: TMenuItem
+      Caption = '&File'
+      object Exitmnu: TMenuItem
+        Caption = 'E&xit'
+        OnClick = ExitmnuClick
+      end
+    end
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+    )
+    TransactIsolationLevel = tiReadCommitted
+    Port = 0
+    Database = 'C:\Users\sun\Documents\Lazarus\Project\ThainewGenDict\DB\PaliSubject_main.db'
+    Protocol = 'sqlite-3'
+    LibraryLocation = 'C:\Users\sun\Documents\Lazarus\Project\ThainewGenDict\SQLite3.dll'
+    left = 649
+    top = 36
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    UpdateObject = ZUpdateSQL1
+    BeforePost = ZQuery1BeforePost
+    AfterPost = ZQuery1AfterPost
+    AfterDelete = ZQuery1AfterDelete
+    SQL.Strings = (
+      'select * from PaliSubject'
+    )
+    Params = <>
+    left = 720
+    top = 36
+    object ZQuery1PaliSubject: TMemoField
+      FieldKind = fkData
+      FieldName = 'PaliSubject'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object ZQuery1Content: TMemoField
+      FieldKind = fkData
+      FieldName = 'Content'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM PaliSubject'
+      'WHERE'
+      '  ((PaliSubject.PaliSubject IS NULL AND :OLD_PaliSubject IS NULL) OR (PaliSubject.PaliSubject = :OLD_PaliSubject)) AND'
+      '  ((PaliSubject.Content IS NULL AND :OLD_Content IS NULL) OR (PaliSubject.Content = :OLD_Content))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO PaliSubject'
+      '  (PaliSubject, Content)'
+      'VALUES'
+      '  (:PaliSubject, :Content)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE PaliSubject SET'
+      '  PaliSubject = :PaliSubject,'
+      '  Content = :Content'
+      'WHERE'
+      '  ((PaliSubject.PaliSubject IS NULL AND :OLD_PaliSubject IS NULL) OR (PaliSubject.PaliSubject = :OLD_PaliSubject)) AND'
+      '  ((PaliSubject.Content IS NULL AND :OLD_Content IS NULL) OR (PaliSubject.Content = :OLD_Content))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 792
+    top = 36
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'PaliSubject'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'Content'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_PaliSubject'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_Content'
+        ParamType = ptUnknown
+      end>
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    left = 864
+    top = 36
+  end
+end
