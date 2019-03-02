@@ -1,2 +1,2 @@
 # ThaiPaliNewGenDic
-Thai Pali New Generation Dictionary โปรแกรมดิกชันนารีภาษาบาลี พร้อมประโยคตัวอย่าง
+Thai Pali New Generation Dictionary โปรแกรมดิกชันนารีภาษาบาลี ไทย พร้อมประโยคตัวอย่าง
